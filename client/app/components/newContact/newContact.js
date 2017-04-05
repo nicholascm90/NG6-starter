@@ -12,7 +12,11 @@ let newContactModule = angular.module('newContact', [
     .state('newContact', {
       url: '/new', 
       component: 'newContact'
-    }); 
+    })
+    .state('/edit/:contactId', {
+      url: '/edit/:contactId',
+      component: 'newContact'
+    });
 })
 
 .component('newContact', newContactComponent)

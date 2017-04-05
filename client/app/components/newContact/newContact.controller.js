@@ -1,15 +1,33 @@
 class NewContactController {
-  constructor(contactList, $location) {
+  constructor(contactList, $location, $stateParams) {
     "ngInject"
-    this.location = $location; 
+    this.location = $location;
+    this.stateParams = $stateParams;  
     this.contacts = contactList;  
-    this.name = 'newContact';
+   
+    // if it doesnt have state param (is 'new'), then don't set the values
+
     this.firstName; 
     this.lastName; 
     this.email; 
     this.phone; 
-  }
+    
+    // if it has state param URL and finds the contact, set values
 
+    if(this.contacts.getContact(this.stateParams.contactId)) {
+      let contact = this.contacts.getContact(this.stateParams.contactId); 
+      this.firstName = contact.firstName; 
+      this.lastName = contact.lastName; 
+      this.email = contact.email; 
+      this.phone = contact.phone; 
+      this.id = contact.id; 
+    }
+
+    // if it has state param url and doesn't find contact, redirect 404
+
+
+    console.log(this.stateParams); 
+  }
   getContactData() {
     return {
       firstName: this.firstName, 
@@ -18,8 +36,16 @@ class NewContactController {
       phone: this.phone
     }
   }
-  addContact() {
+  findOrNewContact() {
+    if(this.stateParams.contactId) {
+      return this.contacts.getContactData(this.stateParams); 
+    } else {
+      return false; 
+    }
+  }
+  saveContact() {
     this.contacts.addContact(this.getContactData()); 
+    console.log(this.stateParams); 
     this.location.path('/contacts'); 
   }
 }

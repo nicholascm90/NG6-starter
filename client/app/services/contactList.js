@@ -3,7 +3,7 @@
 export default class ContactList {
 
     constructor() {
-        this.contacts = ["wil", "ben"]; 
+        this.contacts = [{id: 1, firstName: 'Nick', lastName: 'Morrell', email: 'nicholascm90@gmail.com', phone: 8504966910, active: true }]; 
     }
 
     getContacts() {
@@ -17,8 +17,10 @@ export default class ContactList {
         console.log(this.contacts); 
     }
 
-    getContact() {
-        return this.contacts.find(x => x.id ==id); 
+    getContact(id) {
+        let contact = this.contacts.find(x => x.id == id)
+        let found = contact != 'undefined' ? contact : false; 
+        return found; 
     }
 
 }
