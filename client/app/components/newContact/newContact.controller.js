@@ -30,6 +30,7 @@ class NewContactController {
   }
   getContactData() {
     return {
+      id: this.id,
       firstName: this.firstName, 
       lastName: this.lastName, 
       email: this.email, 
@@ -44,7 +45,7 @@ class NewContactController {
     }
   }
   saveContact() {
-    this.contacts.addContact(this.getContactData()); 
+    this.contacts.saveContact(this.getContactData()); 
     console.log(this.stateParams); 
     this.location.path('/contacts'); 
   }
