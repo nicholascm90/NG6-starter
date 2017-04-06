@@ -40,11 +40,11 @@ class contactFormController {
   }
   saveContact() {
     this.contacts.saveContact(this.getContactData()); 
-    this.location.path('/contacts'); 
+    this.location.path('/'); 
   }
   deleteContact() {
     this.contacts.deleteContact(this.getContactData()); 
-    this.location.path('/contacts'); 
+    this.location.path('/'); 
   }
 }
 
