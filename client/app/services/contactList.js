@@ -16,7 +16,6 @@ export default class ContactList {
         person['id'] = this.contacts.length + 1;  //attach an ID. When communicating with the rest api 
         // we would expect the server to generate unique IDs for contacts
         this.contacts.push(person)
-        console.log(this.contacts); 
     }
 
     saveContact(person) {
@@ -35,9 +34,8 @@ export default class ContactList {
 
     deleteContact(contact) {
         var deferred = this.q.defer(); 
-        var index = _.findIndex(contacts, _.matchesProperty('id', contact.id)); 
-        contacts.splice(index, 1); 
-        // console.log('deleted', contacts, index); 
+        var index = _.findIndex(this.contacts, _.matchesProperty('id', contact.id)); 
+        this.contacts.splice(index, 1); 
         deferred.resolve(); 
 
         return deferred.promise; 

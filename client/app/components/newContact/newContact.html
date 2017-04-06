@@ -1,30 +1,30 @@
 <navbar></navbar>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-push-3"
-    <form name="contactForm">
-    <div class="form-group">
-        <label for="FirstName">First Name</label>
-        <input required ng-model="$ctrl.firstName" type="text" class="form-control" id="FirstName" placeholder="First Name">
-    </div>
-    <div class="form-group">
-        <label for="LastName">Last Name</label>
-        <input required ng-model="$ctrl.lastName" type="text" class="form-control" id="LastName" placeholder="Last Name">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input ng-model="$ctrl.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input ng-model="$ctrl.phone" type="phone" class="form-control" id="phoneNumber" placeholder="Phone Number">
-    </div>
-    <div class="checkbox">
-        <label>
-         <input ng-model="$ctrl.active" type="checkbox"> Active
-    </label>
-    </div>
-    <button ng-disabled="contactForm.$invalid" ng-click="$ctrl.saveContact()" class="btn btn-primary">Save Contact</button> 
-    </form>
+        <div class="col-md-6 col-md-push-3">
+            <form name="contactForm">
+                <div class="form-group required">
+                    <label for="FirstName" class="required">First Name</label>
+                    <input required ng-model="$ctrl.firstName" type="text" class="form-control" id="FirstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="LastName" class="required">Last Name</label>
+                    <input required ng-model="$ctrl.lastName" type="text" class="form-control" id="LastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input ng-model="$ctrl.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input ng-model="$ctrl.phone" type="phone" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                </div>
+                <div class="checkbox">
+                <label><input ng-model="$ctrl.active" type="checkbox"> Active</label>
+                </div>
+                <button ng-disabled="contactForm.$invalid" ng-click="$ctrl.saveContact()" class="btn btn-primary">Save Contact</button>
+                <button ng-if="$ctrl.id != undefined" ng-click="$ctrl.deleteContact()" class="btn btn-danger">Delete Contact</button> 
+            </form>
+        </div>
     </div>
 </div>

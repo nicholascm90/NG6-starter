@@ -42,6 +42,10 @@ class NewContactController {
     this.contacts.saveContact(this.getContactData()); 
     this.location.path('/contacts'); 
   }
+  deleteContact() {
+    this.contacts.deleteContact(this.getContactData()); 
+    this.location.path('/contacts'); 
+  }
 }
 
 export default NewContactController;
