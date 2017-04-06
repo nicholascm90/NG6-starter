@@ -9,7 +9,19 @@ export default class ContactList {
     }
 
     getContacts() {
-        return this.contacts; 
+        return this.contacts.filter(x => x.active != false).sort(this._sortAlphabeticalLastName);
+    };
+
+    _sortAlphabeticalLastName(a, b) {
+        let nameA = a.lastName.toUpperCase(); 
+        let nameB = b.lastName.toUpperCase(); 
+        if(nameA < nameB) {
+            return -1; 
+        }
+        if(nameA > nameB) {
+            return 1; 
+        }
+        return 0; 
     }
 
     _addContact(person) {
@@ -35,8 +47,11 @@ export default class ContactList {
     deleteContact(contact) {
         var deferred = this.q.defer(); 
         var index = _.findIndex(this.contacts, _.matchesProperty('id', contact.id)); 
-        this.contacts.splice(index, 1); 
-        deferred.resolve(); 
+        this.contacts[index].active = false;
+        // this.contacts.splice(index, 1); 
+        deferred.resolve();         
+
+        console.log(this.contacts); 
 
         return deferred.promise; 
     }
