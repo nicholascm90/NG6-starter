@@ -27,6 +27,18 @@ describe('Contact Service tests', function () {
 
             expect(ContactService.getContacts().length).to.equal(2);
         });
+        it('Should be able to update a contact that already exists', () => {
+            
+            let updatedContact = {
+                id: 1,
+                firstName: 'Nickolas', 
+                lastName: 'Morrell2', 
+                phone: 8504966910,
+                email: 'nicholascm90@gmail.com'
+            }; 
+            ContactService.saveContact(updatedContact)
+            expect(ContactService.getContact(1)).to.equal(updatedContact); 
+        }); 
     });
 
 
