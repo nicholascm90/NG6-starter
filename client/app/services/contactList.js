@@ -51,8 +51,6 @@ export default class ContactList {
         // this.contacts.splice(index, 1); 
         deferred.resolve();         
 
-        console.log(this.contacts); 
-
         return deferred.promise; 
     }
 

@@ -1,4 +1,4 @@
-class NewContactController {
+class contactFormController {
   constructor(contactList, $location, $stateParams) {
     "ngInject"
     this.location = $location;
@@ -31,7 +31,7 @@ class NewContactController {
       phone: this.phone
     }
   }
-  findOrNewContact() {
+  findOrcontactForm() {
     if(this.stateParams.contactId) {
       return this.contacts.getContactData(this.stateParams); 
     } else {
@@ -48,4 +48,4 @@ class NewContactController {
   }
 }
 
-export default NewContactController;
+export default contactFormController;
