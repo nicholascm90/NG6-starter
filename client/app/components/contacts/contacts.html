@@ -2,15 +2,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-push-3">
-
-  <h1 class="text-center">Your Contacts</h1>
-  <a class="btn btn-primary" href="/new">Add New</a>
-  <ul class="list-group" >
-    <li ng-repeat="contact in $ctrl.contacts" class="list-group-item">      
-      <a class="btn btn-primary pull-right" href="/edit/{{ contact.id }}">Edit</a>
-      <p>{{ contact.lastName }}, {{ contact.firstName }}</p>
-      <p>{{ contact.email }} | {{ contact.phone }}</p>
-    </li>
-  </ul>
+      <h1 class="text-center">Your Contacts</h1>
+      <a class="btn btn-primary" ui-sref="newContact">Add New</a>
+      <ul class="list-group">
+        <contact-list-item ng-repeat="contact in $ctrl.contacts" contact="contact"></contact-list-item>
+      </ul>
+    </div>
+  </div>
 </div>
-  </div></div>
