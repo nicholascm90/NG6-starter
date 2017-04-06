@@ -1,4 +1,4 @@
-
+import _ from 'lodash';
 
 export default class ContactList {
 
@@ -21,12 +21,12 @@ export default class ContactList {
 
     saveContact(person) {
         var deferred = this.q.defer(); 
-        if(person.id != 'undefined') {
+        if (person.id == undefined) {
+            this._addContact(person);
+            deferred.resolve(); 
+        } else {
             var index = _.findIndex(this.contacts, _.matchesProperty('id', person.id)); 
             this.contacts[index] = person; 
-            deferred.resolve(); 
-        } else{
-            this._addContact(person);
             deferred.resolve(); 
         }
 
@@ -48,5 +48,4 @@ export default class ContactList {
         let found = contact != 'undefined' ? contact : false; 
         return found; 
     }
-
 }

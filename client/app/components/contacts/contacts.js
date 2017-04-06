@@ -10,7 +10,7 @@ let contactsModule = angular.module('contacts', [
   "ngInject"; 
   $stateProvider
     .state('contacts', {
-      url: '/contacts', 
+      url: '/', 
       component: 'contacts'
     }); 
 })

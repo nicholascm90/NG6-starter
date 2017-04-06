@@ -4,16 +4,13 @@ class NewContactController {
     this.location = $location;
     this.stateParams = $stateParams;  
     this.contacts = contactList;  
-   
     // if it doesnt have state param (is 'new'), then don't set the values
-
     this.firstName; 
     this.lastName; 
     this.email; 
     this.phone; 
-    
+  
     // if it has state param URL and finds the contact, set values
-
     if(this.contacts.getContact(this.stateParams.contactId)) {
       let contact = this.contacts.getContact(this.stateParams.contactId); 
       this.firstName = contact.firstName; 
@@ -22,10 +19,7 @@ class NewContactController {
       this.phone = contact.phone; 
       this.id = contact.id; 
     }
-
     // if it has state param url and doesn't find contact, redirect 404
-
-
     console.log(this.stateParams); 
   }
   getContactData() {
@@ -46,7 +40,6 @@ class NewContactController {
   }
   saveContact() {
     this.contacts.saveContact(this.getContactData()); 
-    console.log(this.stateParams); 
     this.location.path('/contacts'); 
   }
 }
