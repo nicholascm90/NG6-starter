@@ -39,12 +39,14 @@ class contactFormController {
     }
   }
   saveContact() {
-    this.contacts.saveContact(this.getContactData()); 
-    this.location.path('/'); 
+    this.contacts.saveContact(this.getContactData()).then(() => {
+        this.location.path('/'); 
+  }); 
   }
   deleteContact() {
-    this.contacts.deleteContact(this.getContactData()); 
-    this.location.path('/'); 
+    this.contacts.deleteContact(this.getContactData()).then(() => {
+        this.location.path('/'); 
+    }); 
   }
 }
 
