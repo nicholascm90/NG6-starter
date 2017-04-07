@@ -3,6 +3,7 @@
     <div class="col-md-6 col-md-push-3">
       <h1 class="text-center">Contacts</h1>
       <a class="btn" ui-sref="contactForm">Add New Contact</a>
+      <h4 class="text-center" ng-show="$ctrl.contacts.length == 0">No Contacts Added!</h4>
       <ul class="list-group">
         <contact-list-item ng-repeat="contact in $ctrl.contacts" contact="contact"></contact-list-item>
       </ul>
