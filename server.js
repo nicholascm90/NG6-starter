@@ -7,7 +7,7 @@ app.use(express.static('dist'));
 let port = process.env.PORT || 3005; 
 
 app.set('port', port); 
-console.log(__dirname); 
+console.log('directory', __dirname); 
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html'); 
