@@ -24,7 +24,7 @@ describe('Contact Service tests', function () {
         it('Should list array of the available contacts', () => {
             ContactService._addContact({ id: undefined, firstName: 'nick', lastName: 'zimmer' });
 
-            expect(ContactService.getContacts().length).to.equal(2);
+            expect(ContactService.getContacts().length).to.equal(3);
         });
         it('Should be able to update a contact that already exists', () => {
             let updatedContact = {

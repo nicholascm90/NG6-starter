@@ -7,7 +7,7 @@ describe('contactForm', () => {
   let $rootScope, makeController;
 
   beforeEach(window.module(contactFormModule));
-  beforeEach(inject((_$rootScope_) => {
+  beforeEach(inject((_$rootScope_, contactList) => {
     $rootScope = _$rootScope_;
     makeController = () => {
       return new contactFormController();
