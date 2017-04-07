@@ -1,7 +1,7 @@
 {
   "name": "ng6-starter",
   "version": "0.0.1",
-  "description": "Starter for Angular + ES6 + (Webpack or JSPM)",
+  "description": "Contact Me Application",
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
@@ -68,10 +68,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/NG6-starter.git"
+    "url": "https://github.com/nicholascm90/contact-me-ng6"
   },
-  "author": "AngularClass",
-  "license": "Apache-2.0",
+  "author": "Nicholas Morrell",
+  "license": "MIT",
   "babel": {
     "plugins": [
       "transform-runtime"
