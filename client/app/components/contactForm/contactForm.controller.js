@@ -8,6 +8,7 @@ class contactFormController {
     this.lastName; 
     this.email; 
     this.phone; 
+    this.phonePattern = '[0-9]{3,11}'; 
 
     if(this.contacts.getContact(this.stateParams.contactId)) {
       let contact = this.contacts.getContact(this.stateParams.contactId); 
