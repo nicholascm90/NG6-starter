@@ -3,7 +3,7 @@ import services from './services';
 
 
 describe('Contact Service tests', function () {
-    const ContactService;
+    let ContactService;
     let person = {
         firstName: 'Cassie',
         lastName: 'Berton',
@@ -13,7 +13,7 @@ describe('Contact Service tests', function () {
     beforeEach(window.module(services));
     beforeEach(inject(function ($injector) {
         ContactService = $injector.get('contactList');
-        ConactService._addContact(person);
+        ContactService._addContact(person);
     }));
     describe('contact lists', () => {
 
@@ -39,7 +39,7 @@ describe('Contact Service tests', function () {
         }); 
 
         it('Should inactivate a contact', () => {
-            ContactService.inactivate(person); 
+            ContactService.deleteContact(person); 
             let inactiveContact = ContactService.getContact(person.id)
             
             expect(inactiveContact.active).to.equal(false); 

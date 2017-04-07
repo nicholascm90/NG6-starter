@@ -14,36 +14,15 @@ describe('contactForm', () => {
     };
   }));
 
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
-
   describe('Controller', () => {
     // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
+    it('has contact properties firstName, lastName, email, phone, phonePattern', () => { // erase if removing this.name from the controller
       let controller = makeController();
-      expect(controller).to.have.property('name');
+      expect(controller).to.have.property('firstName');
+      expect(controller).to.have.property('lastName');
+      expect(controller).to.have.property('email');
+      expect(controller).to.have.property('phone');
+      expect(controller).to.have.property('phonePattern');
     });
-  });
-
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(contactFormTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
-    });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = contactFormComponent;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(contactFormTemplate);
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(contactFormController);
-      });
   });
 });

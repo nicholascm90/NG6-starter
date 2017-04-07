@@ -1,6 +1,6 @@
 class ContactListItemController {
   constructor() {
-    this.name = 'contactListItem';
+    
   }
 }
 
