@@ -1,6 +1,6 @@
 $panelBackground: #fff; 
 .panel {
-  box-shadow: 0 2px 3px rgba(0,0,0,.16)
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
 .panel-body {
@@ -11,7 +11,16 @@ label.required::before {
   content:"* "; 
 }
 
-input.ng-invalid.ng-dirty {
-  border-color: red;
+input.ng-invalid.ng-touched {
+  border: 2px solid #F46036;
+}
+
+input.square {
+  border-radius: 0px;
+  border: 2px solid #d7d7d7;
+}
+
+input.square:focus {
+  border: 2px solid #00B57D;
 }
 

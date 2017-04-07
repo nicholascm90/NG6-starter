@@ -58,6 +58,7 @@ export default class ContactList {
     getContact(id) {
         let contact = this.contacts.find(x => x.id == id); 
         let found = contact != 'undefined' ? contact : null; 
+        
         return found; 
     }
 }
