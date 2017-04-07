@@ -25,7 +25,8 @@ export default class ContactList {
     }
 
     _addContact(person) {
-        person['id'] = this.contacts.length + 1;  //attach an ID. When communicating with the rest api 
+        person['id'] = this.contacts.length + 1;  
+        //attach an ID. When communicating with the rest api 
         // we would expect the server to generate unique IDs for contacts
         this.contacts.push(person)
     }
@@ -55,8 +56,8 @@ export default class ContactList {
     }
 
     getContact(id) {
-        let contact = this.contacts.find(x => x.id == id)
-        let found = contact != 'undefined' ? contact : false; 
+        let contact = this.contacts.find(x => x.id == id); 
+        let found = contact != 'undefined' ? contact : null; 
         return found; 
     }
 }

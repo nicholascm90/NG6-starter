@@ -3,8 +3,8 @@ import services from './services';
 
 
 describe('Contact Service tests', function () {
-    var ContactService;
-    var person = {
+    const ContactService;
+    let person = {
         firstName: 'Cassie',
         lastName: 'Berton',
         phone: 5556321234,
@@ -13,8 +13,7 @@ describe('Contact Service tests', function () {
     beforeEach(window.module(services));
     beforeEach(inject(function ($injector) {
         ContactService = $injector.get('contactList');
-        console.log('contact service', ContactService._addContact);
-        console.log(expect);
+        ConactService._addContact(person);
     }));
     describe('contact lists', () => {
 
@@ -38,6 +37,13 @@ describe('Contact Service tests', function () {
             ContactService.saveContact(updatedContact)
             expect(ContactService.getContact(1)).to.equal(updatedContact); 
         }); 
+
+        it('Should inactivate a contact', () => {
+            ContactService.inactivate(person); 
+            let inactiveContact = ContactService.getContact(person.id)
+            
+            expect(inactiveContact.active).to.equal(false); 
+        })
     });
 
 

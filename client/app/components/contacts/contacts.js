@@ -12,7 +12,7 @@ let contactsModule = angular.module('contacts', [
     .state('contacts', {
       url: '/', 
       component: 'contacts'
-    }); 
+    })
 })
 
 .component('contacts', contactsComponent)
