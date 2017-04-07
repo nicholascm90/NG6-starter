@@ -1,7 +1,7 @@
 
 ## Contact List App
 
-### [contact-list](https://safe-basin-70450.herokuapp.com/) hosted on Heroku
+### App is hosted on Heroku at [https://safe-basin-70450.herokuapp.com/](https://safe-basin-70450.herokuapp.com/)
 
 > This project implements an SPA using Angular 1.6 -> Architecture - went with a scalable, component based architecture which would be easier to upgrade to Angular2 (or Angular4)
 
