@@ -10,7 +10,7 @@ app.set('port', port);
 console.log(__dirname); 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html'); 
+    res.sendFile(__dirname + '/index.html'); 
 }); 
 const server = app.listen(port, () => {
     console.log('Listening on' + port); 
