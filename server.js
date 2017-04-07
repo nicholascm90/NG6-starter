@@ -1,12 +1,16 @@
+"use strict" 
+
 const express = require('express'); 
+const path = require('path');
 var app = express(); 
 app.use(express.static('dist')); 
-app.set('port', 3005); 
+let port = process.env.PORT || 3005; 
+
+app.set('port', port); 
 
 app.get('/', (req, res) => {
-    res.sendFile('dist/index.html'); 
+    res.sendFile(path.join(__dirname, 'dist/index.html')); 
 }); 
-let port = process.env.PORT || 3000; 
 const server = app.listen(port, () => {
     console.log('Listening on' + port); 
 }); 
